@@ -7,4 +7,9 @@ class Guest
     @favourite_song = favourite_song
     @wallet_amount = wallet_amount
   end
+
+  def whoo()
+    returns "Whoo!"  
+  end
+
 end

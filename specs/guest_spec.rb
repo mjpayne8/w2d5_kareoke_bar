@@ -20,4 +20,7 @@ class TestGuest < MiniTest::Test
     assert_equal(50, @guest.wallet_amount())
   end
 
+  def test_whoo__returns_whoo()
+    assert_equal("Whoo!", @guest.whoo())
+  end
 end
