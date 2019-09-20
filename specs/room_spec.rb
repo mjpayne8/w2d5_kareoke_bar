@@ -9,7 +9,7 @@ class TestRoom  < MiniTest::Test
     @song = Song.new("Gangnam Style")
     @guest = Guest.new("Mark", @song, 50)
     @guest_2 = Guest.new("James", @song, 50)
-    @room = Room.new(1, 10, 2)
+    @room = Room.new(1, 10, 1)
     @room_2 = Room.new(1, 100, 1)
   end
 
@@ -32,6 +32,17 @@ class TestRoom  < MiniTest::Test
 
   def test_add_guest__not_enough_money_not_added()
     @room_2.add_guest(@guest)
+    assert_equal(0, @room_2.number_of_guests())
+  end
+
+  def test_add_guest__enough_room__gets_added()
+    @room.add_guest(@guest)
+    assert_equal(1, @room.number_of_guests())
+  end
+
+  def test_add_guest__not_enough_room_not_added()
+    @room.add_guest(@guest)
+    @room.add_guest(@guest_2)
     assert_equal(0, @room_2.number_of_guests())
   end
 
