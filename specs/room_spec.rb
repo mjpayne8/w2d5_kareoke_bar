@@ -15,5 +15,11 @@ class TestRoom  < MiniTest::Test
     assert_equal(1, @room.room_id())
   end
 
+  def test_number_of_songs__returns_0()
+    assert_equal(0, @room.number_of_songs)
+  end
+  #def test_add_song
+  #  @room.add_song(@guest, @song)
+  #end
 
 end
