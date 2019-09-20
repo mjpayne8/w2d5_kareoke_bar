@@ -9,7 +9,7 @@ class Guest
   end
 
   def whoo()
-    returns "Whoo!"  
+    return "Whoo!"
   end
 
 end
