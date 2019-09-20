@@ -8,7 +8,7 @@ class TestRoom  < MiniTest::Test
   def setup()
     @song = Song.new("Gangnam Style")
     @guest = Guest.new("Mark", @song, 50)
-    @room = Room.new(1, 10)
+    @room = Room.new(1, 10, 2)
   end
 
   def test_room_id__returns_1()
