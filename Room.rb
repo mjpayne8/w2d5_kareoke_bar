@@ -18,6 +18,10 @@ class Room
     return @guests.length()
   end
 
-
+  def add_guest(guest)
+    if @fee < guest.wallet_amount()
+      @guests.push(guest)
+    end
+  end
 
 end
