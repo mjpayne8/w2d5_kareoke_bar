@@ -19,11 +19,13 @@ class Room
   end
 
   def add_guest(guest)
-    if @room_max > number_of_guests() && guest.wallet_amount >= @fee 
+    if @room_max > number_of_guests() && guest.wallet_amount >= @fee
       guest.pay_from_wallet(@fee)
       @guests.push(guest)
     end
   end
 
-
+  def add_song(guest,song)
+    @songs[guest.name] = song if @guests.include?(guest)
+  end
 end
