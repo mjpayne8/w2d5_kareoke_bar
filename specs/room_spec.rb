@@ -28,22 +28,26 @@ class TestRoom  < MiniTest::Test
   def test_add_guest__enough_money__gets_added()
     @room.add_guest(@guest)
     assert_equal(1, @room.number_of_guests())
+    assert_equal(40, @guest.wallet_amount())
   end
 
   def test_add_guest__not_enough_money_not_added()
     @room_2.add_guest(@guest)
     assert_equal(0, @room_2.number_of_guests())
+    assert_equal(50, @guest_2.wallet_amount())
   end
 
   def test_add_guest__enough_room__gets_added()
     @room.add_guest(@guest)
     assert_equal(1, @room.number_of_guests())
+    assert_equal(40, @guest.wallet_amount())
   end
 
   def test_add_guest__not_enough_room_not_added()
     @room.add_guest(@guest)
     @room.add_guest(@guest_2)
     assert_equal(0, @room_2.number_of_guests())
+    assert_equal(50, @guest_2.wallet_amount())
   end
 
   # def test_add_song__guest_not_in_room_no_change_to_song_list()

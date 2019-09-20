@@ -19,7 +19,8 @@ class Room
   end
 
   def add_guest(guest)
-    if guest.pay_from_wallet(@fee) && @room_max > number_of_guests()
+    if @room_max > number_of_guests() && guest.wallet_amount >= @fee 
+      guest.pay_from_wallet(@fee)
       @guests.push(guest)
     end
   end
