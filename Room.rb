@@ -9,4 +9,8 @@ class Room
     @guests = []
   end
 
+  def number_of_songs()
+    return @songs.length()
+  end
+
 end
