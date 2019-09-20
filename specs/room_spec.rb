@@ -25,7 +25,7 @@ class TestRoom  < MiniTest::Test
     assert_equal(0, @room.number_of_guests)
   end
 
-  def test_add_guest__enough_money__gets_added()
+  def test_add_guest__enough_money_gets_added()
     @room.add_guest(@guest)
     assert_equal(1, @room.number_of_guests())
     assert_equal(40, @guest.wallet_amount())
@@ -64,7 +64,14 @@ class TestRoom  < MiniTest::Test
   def test_remove_guest__guest_removed_from_guests()
     @room.add_guest(@guest)
     @room.remove_guest(@guest)
-    assert_equal(0, @room.number_of_guests)
+    assert_equal(0, @room.number_of_guests())
+  end
+
+  def test_add_guest__returns_whoo()
+    @room_3 = Room.new(1, 10, 3)
+    @room_3.add_guest(@guest)
+    @room_3.add_song(@guest, @song)
+    assert_equal("Whoo!", @room_3.add_guest(@guest_2))
   end
 
 end

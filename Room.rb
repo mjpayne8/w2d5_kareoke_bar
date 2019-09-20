@@ -1,3 +1,5 @@
+require("pry")
+
 class Room
 
   attr_reader(:room_id)
@@ -20,13 +22,10 @@ class Room
 
   def add_guest(guest)
     if @room_max > number_of_guests() && guest.wallet_amount >= @fee
-      guest.pay_from_wallet(@fee)
+      guest.pay_from_wallet(@fee) #had this as second argument in && but was always called even if first logical was false
       @guests.push(guest)
+      thing = guest.whoo if @songs.values.any? {|song| song == guest.favourite_song()}
     end
-  end
-
-  def add_song(guest,song)
-    @songs[guest.name] = song if @guests.include?(guest)
   end
 
   def add_song(guest,song)
