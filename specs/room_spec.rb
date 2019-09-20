@@ -50,14 +50,15 @@ class TestRoom  < MiniTest::Test
     assert_equal(50, @guest_2.wallet_amount())
   end
 
-  # def test_add_song__guest_not_in_room_no_change_to_song_list()
-  #  @room.add_song(@guest, @song)
-  #  assert_equal(0, @room.number_of_songs())
-  # end
-  #
-  # def test_add_song__guest_in_room_add_to_song_list()
-  #  @room.add_song(@guest, @song)
-  #  assert_equal(1, @room.number_of_songs())
-  # end
+  def test_add_song__guest_not_in_room_no_change_to_song_list()
+    @room.add_song(@guest, @song)
+    assert_equal(0, @room.number_of_songs())
+  end
+
+  def test_add_song__guest_in_room_add_to_song_list()
+    @room.add_guest(@guest)
+   @room.add_song(@guest, @song)
+   assert_equal(1, @room.number_of_songs())
+  end
 
 end
