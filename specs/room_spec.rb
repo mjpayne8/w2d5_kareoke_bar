@@ -7,7 +7,7 @@ require_relative("../Room")
 class TestRoom  < MiniTest::Test
   def setup()
     @song = Song.new("Gangnam Style")
-    @guest = Guest.new("Mark", "Gangnam_Style", 50)
+    @guest = Guest.new("Mark", @song, 50)
     @room = Room.new(1, 10)
   end
 

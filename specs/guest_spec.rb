@@ -1,11 +1,13 @@
 require("minitest/autorun")
 require("minitest/rg")
+require_relative("../Song")
 require_relative("../Guest")
 
 class TestGuest < MiniTest::Test
 
   def setup()
-    @guest = Guest.new("Mark", "Gangnam_Style", 50)
+    @song = Song.new("Gangnam Style")
+    @guest = Guest.new("Mark", @song, 50)
   end
 
   def test_guest_name__returns_mark()
@@ -13,7 +15,7 @@ class TestGuest < MiniTest::Test
   end
 
   def test_guest_favourite_song__returns_gangnam_style()
-    assert_equal("Gangnam_Style", @guest.favourite_song())
+    assert_equal(@song, @guest.favourite_song())
   end
 
   def test_wallet_amount__returns_50()
