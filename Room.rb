@@ -28,4 +28,13 @@ class Room
   def add_song(guest,song)
     @songs[guest.name] = song if @guests.include?(guest)
   end
+
+  def add_song(guest,song)
+    @songs[guest.name] = song if @guests.include?(guest)
+  end
+
+  def remove_guest(guest)
+    @guests.delete(guest)
+  end
+
 end
