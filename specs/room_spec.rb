@@ -57,8 +57,14 @@ class TestRoom  < MiniTest::Test
 
   def test_add_song__guest_in_room_add_to_song_list()
     @room.add_guest(@guest)
-   @room.add_song(@guest, @song)
-   assert_equal(1, @room.number_of_songs())
+    @room.add_song(@guest, @song)
+    assert_equal(1, @room.number_of_songs())
+  end
+
+  def test_remove_guest__guest_removed_from_guests()
+    @room.add_guest(@guest)
+    @room.remove_guest(@guest)
+    assert_equal(0, @room.number_of_guests)
   end
 
 end
