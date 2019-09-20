@@ -8,8 +8,12 @@ class TestGuest < MiniTest::Test
     @guest = Guest.new("Mark", "Gangnam_style", 50)
   end
 
-  def test_guest_name__mark()
-    assert_equal("Mark", @guest.name)
+  def test_guest_name__returns_mark()
+    assert_equal("Mark", @guest.name())
+  end
+
+  def test_guest_favourite_song__returns_gangnam_style()
+    assert_equal("Mark", @guest.favourite_song())
   end
 
 end
