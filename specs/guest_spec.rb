@@ -16,4 +16,8 @@ class TestGuest < MiniTest::Test
     assert_equal("Gangnam_Style", @guest.favourite_song())
   end
 
+  def test_wallet_amount__returns_50()
+    assert_equal(50, @guest.wallet_amount())
+  end
+
 end
