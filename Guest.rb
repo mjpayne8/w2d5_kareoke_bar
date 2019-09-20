@@ -12,4 +12,10 @@ class Guest
     return "Whoo!"
   end
 
+  def pay_from_wallet(amount)
+    return false if amount > @wallet_amount
+    @wallet_amount -= amount
+    return true
+  end
+
 end

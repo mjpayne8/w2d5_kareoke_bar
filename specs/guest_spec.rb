@@ -31,7 +31,7 @@ class TestGuest < MiniTest::Test
   end
 
   def test_pay_from_wallet__100_returns_false_wallet_amount_50()
-    result = @guest.pay_from_wallet(10)
+    result = @guest.pay_from_wallet(100)
     assert_equal(false, result)
     assert_equal(50, @guest.wallet_amount)
   end
