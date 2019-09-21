@@ -74,4 +74,8 @@ class TestRoom  < MiniTest::Test
     assert_equal("Whoo!", @room_3.add_guest(@guest_2))
   end
 
+ def test_money_collected__returns_0
+   assert_equal(0, @room.money_collected)
+ end
+
 end
