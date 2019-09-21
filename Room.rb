@@ -24,6 +24,7 @@ class Room
   def add_guest(guest)
     if @room_max > number_of_guests() && guest.wallet_amount >= @fee
       guest.pay_from_wallet(@fee) #had this as second argument in && but was always called even if first logical was false
+      increase_money_collected(@fee)
       @guests.push(guest)
       return guest.whoo if @songs.values.any? {|song| song == guest.favourite_song()}
     end

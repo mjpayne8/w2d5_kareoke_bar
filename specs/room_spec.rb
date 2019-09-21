@@ -41,6 +41,7 @@ class TestRoom  < MiniTest::Test
     @room.add_guest(@guest)
     assert_equal(1, @room.number_of_guests())
     assert_equal(40, @guest.wallet_amount())
+    assert_equal(10, @room.money_collected())
   end
 
   def test_add_guest__not_enough_room_not_added()
