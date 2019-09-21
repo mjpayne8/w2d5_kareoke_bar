@@ -2,7 +2,7 @@ require("pry")
 
 class Room
 
-  attr_reader(:room_id)
+  attr_reader(:room_id, :money_collected)
 
   def initialize(room_id, fee, room_max)
     @room_id = room_id
@@ -10,6 +10,7 @@ class Room
     @songs = {}
     @guests = []
     @room_max = room_max
+    @money_collected = 0
   end
 
   def number_of_songs()
