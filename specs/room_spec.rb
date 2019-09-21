@@ -78,4 +78,9 @@ class TestRoom  < MiniTest::Test
    assert_equal(0, @room.money_collected)
  end
 
+ def test_increase_money_collected()
+   @room.increase_money_collected()
+   assert_equal(0, @room.money_collected)
+ end
+
 end
