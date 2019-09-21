@@ -41,4 +41,10 @@ class Room
   def increase_money_collected(amount)
     @money_collected += amount
   end
+
+  def call_customer_to_sing(guest)
+    if @songs.keys.include?(guest.name)
+      return "Now #{guest.name} will sing #{@songs[guest.name].name}"
+    end
+  end
 end

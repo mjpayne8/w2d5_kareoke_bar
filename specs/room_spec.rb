@@ -87,8 +87,8 @@ class TestRoom  < MiniTest::Test
  def test_call_customer_to_sing()
    @room.add_guest(@guest)
    @room.add_song(@guest, @song)
-   @room.test_call_customer(@guest)
-   assert_equal("Now Mark will sing Gangnam Style", @room.call_customer_to_sing)
+   result = @room.call_customer_to_sing(@guest)
+   assert_equal("Now Mark will sing Gangnam Style", result)
  end
 
 end
