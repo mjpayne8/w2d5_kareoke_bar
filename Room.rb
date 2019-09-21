@@ -37,4 +37,7 @@ class Room
     @guests.delete(guest)
   end
 
+  def increase_money_collected(amount)
+    @money_collected += amount
+  end
 end
