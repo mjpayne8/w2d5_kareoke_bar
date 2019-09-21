@@ -84,4 +84,11 @@ class TestRoom  < MiniTest::Test
    assert_equal(10, @room.money_collected)
  end
 
+ def test_call_customer_to_sing()
+   @room.add_guest(@guest)
+   @room.add_song(@guest, @song)
+   @room.test_call_customer(@guest)
+   assert_equal("Now Mark will sing Gangnam Style", @room.call_customer_to_sing)
+ end
+
 end
