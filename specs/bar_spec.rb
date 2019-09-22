@@ -11,12 +11,12 @@ class TestBar < MiniTest::Test
     @song = Song.new("Gangnam Style")
     @guest = Guest.new("Mark", @song, 50)
     @room = Room.new(1, 10, 1)
-    @room.add(@guest)
+    @room.add_guest(@guest)
     @bar = Bar.new([@room])
   end
 
   def test_get_tab__returns_0()
-    assert_equal(0, Bar.tab(@room))
+    assert_equal(0, @bar.get_tab(@room))
   end
 
 end
