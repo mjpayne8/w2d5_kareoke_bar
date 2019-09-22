@@ -15,4 +15,8 @@ class Bar
     end
   end
 
+  def number_of_rooms()
+    return @room_list.length()
+  end
+
 end

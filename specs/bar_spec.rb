@@ -38,4 +38,7 @@ class TestBar < MiniTest::Test
     assert_equal(40, @guest.wallet_amount())
   end
 
+  def test_number_of_rooms()
+    assert_equal(1, @bar.number_of_rooms())
+  end
 end
