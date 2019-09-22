@@ -9,4 +9,10 @@ class Bar
     return @tab[room.room_id]
   end
 
+  def add_to_tab(room, guest, amount)
+    if room.includes_guest?(guest) && @room_list.include?(room)
+      @tab[room.room_id] =  amount if guest.pay_from_wallet(amount)
+    end
+  end
+
 end
