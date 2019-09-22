@@ -47,4 +47,9 @@ class Room
       return "Now #{guest.name} will sing #{@songs[guest.name].name}"
     end
   end
+
+  def includes_guest?(guest)
+    return @guests.include?(guest)
+  end
+  
 end

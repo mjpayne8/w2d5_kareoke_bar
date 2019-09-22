@@ -75,20 +75,29 @@ class TestRoom  < MiniTest::Test
     assert_equal("Whoo!", @room_3.add_guest(@guest_2))
   end
 
- def test_money_collected__returns_0
-   assert_equal(0, @room.money_collected)
- end
+  def test_money_collected__returns_0
+    assert_equal(0, @room.money_collected)
+  end
 
- def test_increase_money_collected()
-   @room.increase_money_collected(10)
-   assert_equal(10, @room.money_collected)
- end
+  def test_increase_money_collected()
+    @room.increase_money_collected(10)
+    assert_equal(10, @room.money_collected)
+  end
 
- def test_call_customer_to_sing()
-   @room.add_guest(@guest)
-   @room.add_song(@guest, @song)
-   result = @room.call_customer_to_sing(@guest)
-   assert_equal("Now Mark will sing Gangnam Style", result)
- end
+  def test_call_customer_to_sing()
+    @room.add_guest(@guest)
+    @room.add_song(@guest, @song)
+    result = @room.call_customer_to_sing(@guest)
+    assert_equal("Now Mark will sing Gangnam Style", result)
+  end
+
+  def test_includes_guest__return_true()
+    @room.add_guest(@guest)
+    assert_equal(true, @room.includes_guest?(@guest))
+  end
+
+  def test_includes_guest__return_false()
+    assert_equal(false, @room.includes_guest?(@guest))
+  end
 
 end
