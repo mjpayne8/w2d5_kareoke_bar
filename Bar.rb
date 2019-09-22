@@ -19,4 +19,12 @@ class Bar
     return @room_list.length()
   end
 
+  def remove_room(room)
+    @room_list.delete(room) if @room_list.include?(room)
+  end
+
+  def add_room(room)
+    @room_list.push(room) if !@room_list.include?(room)
+  end
+
 end

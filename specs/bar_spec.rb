@@ -41,4 +41,17 @@ class TestBar < MiniTest::Test
   def test_number_of_rooms()
     assert_equal(1, @bar.number_of_rooms())
   end
+
+  def test_remove_room()
+    @bar.remove_room(@room)
+    assert_equal(0, @bar.number_of_rooms())
+  end
+
+  def test_remove_room()
+    @bar.remove_room(@room)
+    @bar.add_room(@room)
+    assert_equal(1, @bar.number_of_rooms())
+  end
+
+
 end
