@@ -51,5 +51,5 @@ class Room
   def includes_guest?(guest)
     return @guests.include?(guest)
   end
-  
+
 end
