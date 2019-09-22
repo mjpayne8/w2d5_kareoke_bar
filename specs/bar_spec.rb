@@ -19,4 +19,11 @@ class TestBar < MiniTest::Test
     assert_equal(0, @bar.get_tab(@room))
   end
 
+  def test_add_to_tab__guest_in_room_and_enough_money()
+    @room.add_guest(@guest)
+    @bar.add_to_tab(@room, @guest, 10)
+    assert_equal(10, @bar.get_tab(@room))
+    assert_equal(30, @guest.wallet_amount())
+  end
+
 end
